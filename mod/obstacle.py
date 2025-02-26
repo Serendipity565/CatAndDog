@@ -1,3 +1,4 @@
+import os
 import pygame
 import random
 import sys
@@ -46,7 +47,7 @@ def createdogObstacle():
 
 class Obstacle1(object):  # 地上的障碍物
     def __init__(self):
-        self.obstacleStatus = pygame.transform.scale(pygame.image.load('.\\images\\obstacle1.png'), (50, 50))
+        self.obstacleStatus = pygame.transform.scale(pygame.image.load(os.path.join("images", "obstacle1.png")), (50, 50))
         self.obstacleRect = self.obstacleStatus.get_rect()
         self.speed = speed
         self.obstacleX = 1200
@@ -67,7 +68,7 @@ class Obstacle1(object):  # 地上的障碍物
 
 class Obstacle2(object):  # 空中的障碍物
     def __init__(self):
-        self.obstacleStatus = pygame.transform.scale(pygame.image.load('.\\images\\obstacle2.png'), (50, 50))
+        self.obstacleStatus = pygame.transform.scale(pygame.image.load(os.path.join("images", "obstacle2.png")), (50, 50))
         self.obstacleRect = self.obstacleStatus.get_rect()
         self.speed = speed
         self.obstacleX = 1200
@@ -88,7 +89,7 @@ class Obstacle2(object):  # 空中的障碍物
 
 class Obstacle3(object):  # 天降的障碍物
     def __init__(self):
-        self.obstacleStatus = pygame.transform.scale(pygame.image.load('.\\images\\fish.png'), (50, 50))
+        self.obstacleStatus = pygame.transform.scale(pygame.image.load(os.path.join("images", "fish.png")), (50, 50))
         self.obstacleRect = self.obstacleStatus.get_rect()
         self.speed = speed
         self.obstacleX = 0
@@ -108,7 +109,7 @@ class Obstacle3(object):  # 天降的障碍物
 
 class Obstacle4(object):  # 天降的障碍物
     def __init__(self):
-        self.obstacleStatus = pygame.transform.scale(pygame.image.load('.\\images\\bone.png'), (50, 50))
+        self.obstacleStatus = pygame.transform.scale(pygame.image.load(os.path.join("images", "bone.png")), (50, 50))
         self.obstacleRect = self.obstacleStatus.get_rect()
         self.speed = speed
         self.obstacleX = 0

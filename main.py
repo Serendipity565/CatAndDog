@@ -180,7 +180,7 @@ def Play():
         dog_energy_rect.bottomleft = (800, 140)
 
         if cat.beatS:
-            cat_beatImage = pygame.transform.scale(pygame.image.load('.\\images\\fish.png'), (cat.size, cat.size))
+            cat_beatImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "fish.png")), (cat.size, cat.size))
             cat_beatImage = pygame.transform.rotate(cat_beatImage, cat.angle)
             beatRect = cat_beatImage.get_rect()
             beatRect.bottomleft = (cat.now_x, cat.now_y)
@@ -190,7 +190,7 @@ def Play():
                 cat.beatS = False
 
         if dog.beatS:
-            dog_beatImage = pygame.transform.scale(pygame.image.load('.\\images\\bone.png'), (dog.size, dog.size))
+            dog_beatImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "bone.png")), (dog.size, dog.size))
             dog_beatImage = pygame.transform.rotate(dog_beatImage, dog.angle)
             beatRect = dog_beatImage.get_rect()
             beatRect.bottomleft = (dog.now_x, dog.now_y)
@@ -200,25 +200,25 @@ def Play():
                 dog.beatS = False
 
         if cat.defendStatus:
-            cat_defendImage = pygame.transform.scale(pygame.image.load('.\\images\\denfendcat.png'), (200, 150))
+            cat_defendImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "denfendcat.png")), (200, 150))
             cat_defendRect = cat_defendImage.get_rect()
             cat_defendRect.bottomleft = (cat.catX - 35, cat.catY - 15)
             screen.blit(cat_defendImage, cat_defendRect)
 
         if dog.defendStatus:
-            dog_defendImage = pygame.transform.scale(pygame.image.load('.\\images\\defendog.png'), (200, 150))
+            dog_defendImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "defendog.png")), (200, 150))
             dog_defendRect = dog_defendImage.get_rect()
             dog_defendRect.bottomleft = (dog.dogX - 35, dog.dogY - 15)
             screen.blit(dog_defendImage, dog_defendRect)
 
         if cat.hurtStatus:
-            cat_hurtImage = pygame.transform.scale(pygame.image.load('.\\images\\hurt.png'), (100, 75))
+            cat_hurtImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "hurt.png")), (100, 75))
             cat_hurtRect = cat_hurtImage.get_rect()
             cat_hurtRect.bottomleft = (cat.catX + 15, cat.catY - 80)
             screen.blit(cat_hurtImage, cat_hurtRect)
 
         if dog.hurtStatus:
-            finalImage = pygame.transform.scale(pygame.image.load('.\\images\\hurt.png'), (100, 75))
+            finalImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "hurt.png")), (100, 75))
             finalRect = finalImage.get_rect()
             finalRect.bottomleft = (dog.dogX + 15, dog.dogY - 80)
             screen.blit(finalImage, finalRect)
@@ -261,19 +261,19 @@ def Play():
         clock.tick(100)  # 控制帧率
 
     if dog.health:
-        finalImage = pygame.transform.scale(pygame.image.load('.\\images\\dogwin.png'), (500, 500))
+        finalImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "dogwin.png")), (500, 500))
         finalRect = finalImage.get_rect()
         finalRect.bottomleft = (350, 650)
-        cat_heart = pygame.transform.scale(pygame.image.load('.\\images\\heart0.png'), (300, 50))
+        cat_heart = pygame.transform.scale(pygame.image.load(os.path.join("images", "heart0.png")), (300, 50))
         cat_heart_rect = cat_heart.get_rect()
         cat_heart_rect.bottomleft = (100, 70)
         mod.map.screen.blit(finalImage, finalRect)
         mod.map.screen.blit(cat_heart, cat_heart_rect)
     else:
-        finalImage = pygame.transform.scale(pygame.image.load('.\\images\\catwin.png'), (500, 500))
+        finalImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "catwin.png")), (500, 500))
         finalRect = finalImage.get_rect()
         finalRect.bottomleft = (300, 690)
-        dog_heart = pygame.transform.scale(pygame.image.load('.\\images\\heart0.png'), (300, 50))
+        dog_heart = pygame.transform.scale(pygame.image.load(os.path.join("images", "heart0.png")), (300, 50))
         dog_heart_rect = dog_heart.get_rect()
         dog_heart_rect.bottomleft = (800, 70)
         mod.map.screen.blit(finalImage, finalRect)

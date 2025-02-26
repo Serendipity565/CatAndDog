@@ -23,19 +23,20 @@ def play_sound_effect(file_path, start_time, duration):
     sound.play(loops=0, maxtime=duration, fade_ms=0)
 
 def Cat_sound():
-    play_sound_effect(file_path='./music/cat.mp3', start_time=0, duration=1000)
+    play_sound_effect(file_path=os.path.join("music", "cat.mp3"), start_time=0, duration=1000)
 
 def Dog_sound():
-    play_sound_effect(file_path='./music/dog.mp3', start_time=0, duration=2000)
+    play_sound_effect(file_path=os.path.join("music", "dog.mp3"), start_time=0, duration=2000)
+
 class Cat(object):
     def __init__(self):
         self.hurtStatus = False
-        self.catStatus = [pygame.transform.scale(pygame.image.load('.\\images\\cat1.png'), (100, 100)),  # 正常向右移动
-                          pygame.transform.scale(pygame.image.load('.\\images\\cat2.png'), (115, 90)),  # 跳跃向右移动
-                          pygame.transform.scale(pygame.image.load('.\\images\\cat3.png'), (115, 90)),  # 下滑向右移动
-                          pygame.transform.scale(pygame.image.load('.\\images\\cat4.png'), (100, 100)),  # 正常向左移动
-                          pygame.transform.scale(pygame.image.load('.\\images\\cat5.png'), (115, 90)),  # 跳跃向左移动
-                          pygame.transform.scale(pygame.image.load('.\\images\\cat6.png'), (115, 90)),  # 下滑向左移动
+        self.catStatus = [pygame.transform.scale(pygame.image.load(os.path.join("images", "cat1.png")), (100, 100)),  # 正常向右移动
+                          pygame.transform.scale(pygame.image.load(os.path.join("images", "cat2.png")), (115, 90)),  # 跳跃向右移动
+                          pygame.transform.scale(pygame.image.load(os.path.join("images", "cat3.png")), (115, 90)),  # 下滑向右移动
+                          pygame.transform.scale(pygame.image.load(os.path.join("images", "cat4.png")), (100, 100)),  # 正常向左移动
+                          pygame.transform.scale(pygame.image.load(os.path.join("images", "cat5.png")), (115, 90)),  # 跳跃向左移动
+                          pygame.transform.scale(pygame.image.load(os.path.join("images", "cat6.png")), (115, 90)),  # 下滑向左移动
                           ]
         self.statues = 0
         self.catX = cat_x
@@ -44,11 +45,11 @@ class Cat(object):
         self.defendStatus = False  # 默认为非防御状态
         self.health = 5  # 血条
         self.healthStatus = [
-            pygame.transform.scale(pygame.image.load('.\\images\\heart1.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart2.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart3.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart4.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart5.png'), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart1.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart2.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart3.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart4.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart5.png")), (300, 50)),
         ]
         self.beatS = False
         self.now_x = 0
@@ -57,12 +58,12 @@ class Cat(object):
         self.size = 50
         self.energy = 5  # 能量
         self.energyStatus = [
-            pygame.transform.scale(pygame.image.load('.\\images\\energy0.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy1.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy2.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy3.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy4.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy5.png'), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy0.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy1.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy2.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy3.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy4.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy5.png")), (300, 50)),
         ]
 
     def up(self):
@@ -175,12 +176,12 @@ class Dog(object):
         self.hurtStatus = False
         self.size = 50
         self.dogStatus = [
-            pygame.transform.scale(pygame.image.load('.\\images\\dog1.png'), (100, 100)),  # 正常向右移动
-            pygame.transform.scale(pygame.image.load('.\\images\\dog2.png'), (115, 90)),  # 跳跃向右移动
-            pygame.transform.scale(pygame.image.load('.\\images\\dog3.png'), (115, 90)),  # 下滑向右移动
-            pygame.transform.scale(pygame.image.load('.\\images\\dog4.png'), (100, 100)),  # 正常向左移动
-            pygame.transform.scale(pygame.image.load('.\\images\\dog5.png'), (115, 90)),  # 跳跃向左移动
-            pygame.transform.scale(pygame.image.load('.\\images\\dog6.png'), (115, 90)),  # 下滑向左移动
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "dog1.png")), (100, 100)),  # 正常向右移动
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "dog2.png")), (115, 90)),  # 跳跃向右移动
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "dog3.png")), (115, 90)),  # 下滑向右移动
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "dog4.png")), (100, 100)),  # 正常向左移动
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "dog5.png")), (115, 90)),  # 跳跃向左移动
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "dog6.png")), (115, 90)),  # 下滑向左移动
         ]
         self.statues = 0
         self.dogX = dog_x
@@ -189,11 +190,11 @@ class Dog(object):
         self.defendStatus = False  # 默认为非防御状态
         self.health = 5  # 血条
         self.healthStatues = [
-            pygame.transform.scale(pygame.image.load('.\\images\\heart1.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart2.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart3.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart4.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\heart5.png'), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart1.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart2.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart3.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart4.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "heart5.png")), (300, 50)),
         ]
         self.beatS = False
         self.now_x = 0
@@ -201,12 +202,12 @@ class Dog(object):
         self.angle = 0
         self.energy = 5  # 能量
         self.energyStatus = [
-            pygame.transform.scale(pygame.image.load('.\\images\\energy0.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy1.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy2.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy3.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy4.png'), (300, 50)),
-            pygame.transform.scale(pygame.image.load('.\\images\\energy5.png'), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy0.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy1.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy2.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy3.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy4.png")), (300, 50)),
+            pygame.transform.scale(pygame.image.load(os.path.join("images", "energy5.png")), (300, 50)),
         ]
 
     def up(self):
@@ -290,7 +291,7 @@ class Dog(object):
 
     def getDefend(self):
         while self.defendStatus:
-            finalImage = pygame.transform.scale(pygame.image.load('.\\images\\obstacle1.png'), (50, 50))
+            finalImage = pygame.transform.scale(pygame.image.load(os.path.join("images", "obstacle1.png")), (50, 50))
             finalRect = finalImage.get_rect()
             finalRect.bottomleft = (self.dogX, self.dogY)
             screen.blit(finalImage, finalRect)
